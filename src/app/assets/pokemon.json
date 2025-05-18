@@ -1,0 +1,110 @@
+[
+    {
+      "id": 1,
+      "created_at": "2025-02-13 06:16:31.049442+00",
+      "name": "axew",
+      "url": "https://pokemon.fandom.com/wiki/axew",
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/610.png",
+      "type": "Unknown",
+      "shiny": true
+    },
+    {
+      "id": 2,
+      "created_at": "2025-02-13 06:16:58.179355+00",
+      "name": "magikarp",
+      "url": "https://pokemon.fandom.com/wiki/magikarp",
+      "front_default": "'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/129.png",
+      "type": "Unknown",
+      "shiny": true
+    },
+    {
+      "id": 3,
+      "created_at": "2025-02-13 06:17:27.470087+00",
+      "name": "bagon",
+      "url": "https://pokemon.fandom.com/wiki/bagon",
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/371.png",
+      "type": "Unknown",
+      "shiny": true
+    },
+    {
+      "id": 4,
+      "created_at": "2025-02-13 06:17:50.172633+00",
+      "name": "beldum",
+      "url": "https://pokemon.fandom.com/wiki/beldum",
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/374.png",
+      "type": "Unknown",
+      "shiny": false
+    },
+    {
+      "id": 5,
+      "created_at": "2025-02-13 06:18:27.014284+00",
+      "name": "dratini",
+      "url": "https://pokemon.fandom.com/wiki/dratini",
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/147.png",
+      "type": "Unknown",
+      "shiny": true
+    },
+    {
+      "id": 6,
+      "created_at": "2025-02-13 06:19:00.195163+00",
+      "name": "eevee",
+      "url": "https://pokemon.fandom.com/wiki/eevee",
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png",
+      "type": "Unknown",
+      "shiny": false
+    },
+    {
+      "id": 7,
+      "created_at": "2025-02-13 06:19:24.78163+00",
+      "name": "gible",
+      "url": "https://pokemon.fandom.com/wiki/gible",
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/443.png",
+      "type": "Unknown",
+      "shiny": true
+    },
+    {
+      "id": 8,
+      "created_at": "2025-02-13 06:19:49.86797+00",
+      "name": "ralts",
+      "url": "https://pokemon.fandom.com/wiki/ralts",
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/280.png",
+      "type": "Unknown",
+      "shiny": true
+    },
+    {
+      "id": 9,
+      "created_at": "2025-02-13 06:20:26.654816+00",
+      "name": "pawniard",
+      "url": "https://pokemon.fandom.com/wiki/pawniard",
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/624.png",
+      "type": "Unknown",
+      "shiny": false
+    },
+    {
+      "id": 10,
+      "created_at": "2025-02-13 06:20:48.854179+00",
+      "name": "frigibax",
+      "url": "https://pokemon.fandom.com/wiki/frigibax",
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/996.png",
+      "type": "Unknown",
+      "shiny": true
+    },
+    {
+      "id": 11,
+      "created_at": "2025-02-13 06:21:16.028052+00",
+      "name": "cranidos",
+      "url": "https://pokemon.fandom.com/wiki/cranidos",
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/408.png",
+      "type": "Unknown",
+      "shiny": false
+    },
+    {
+      "id": 12,
+      "created_at": "2025-02-13 06:21:41.651853+00",
+      "name": "kubfu",
+      "url": "https://pokemon.fandom.com/wiki/kubfu",
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/891.png",
+      "type": "Unknown",
+      "shiny": false
+    }
+  ]
