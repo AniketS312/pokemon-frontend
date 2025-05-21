@@ -1,4 +1,5 @@
 "use server";
+import { redirect } from 'next/navigation'
 
 export default async function addPokemon(formData) {
     // get pokemon name/shiny and check to see if it exists.
@@ -19,32 +20,40 @@ export default async function addPokemon(formData) {
         name: name,
         number: id,
         shiny: isShiny || false,
-        type: types[0].type.name || 'unknown'
-    };
-    console.log(dbPostEntry);
-
-    const response = await fetch("https://pokemon-backedn.onrender.com/addpokemon", {
+        type: types[0].type.name || 'unknown'};   
+    
+    const fetchResponse = await fetch("https://pokemon-backedn.onrender.com/addpokemon", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(dbPostEntry), // Convert the data to JSON
-    })
-     .then(response => response.json())
-
-    if (response.status === 400) {
-        console.log(response.message);
-        return response;
+    });
+    
+    // Check HTTP status before parsing JSON
+    if (fetchResponse.status === 400) {
+        const errorData = await fetchResponse.json().catch(e => ({ message: "Pokemon already added" }));
+        console.log(errorData);
+        return errorData;
     }
-    if (response.status === 500) {;
-        console.log(response.message);
-        return response;
+    
+    if (fetchResponse.status === 500) {
+        const errorData = await fetchResponse.json().catch(e => ({ message: "Server error" }));
+        console.log(errorData.message);
+        return errorData;
     }
+    
+    if (fetchResponse.ok) {
+        // Only parse JSON if response is OK
+        const response = await fetchResponse.json().catch(e => {
+            console.log("Error parsing JSON response:", e);
+            return { error: true, message: "Failed to parse response" };
+        });
+        // If everything is successful, redirect
+        redirect("/");
 
-    if (response.ok) {
-         const data = await response; 
-        console.log(response.status, data);
-        // console.log(data); 
-        // return data;     
+    } else {
+        // Handle any other error cases
+        return { error: true, status: fetchResponse.status, message: "Request failed" };
     }
 };

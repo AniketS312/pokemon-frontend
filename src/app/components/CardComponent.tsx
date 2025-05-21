@@ -1,12 +1,14 @@
 import React from 'react'
 import Image from 'next/image'
 import { Sparkles } from 'lucide-react';
-
+import { Button } from './ui/button';
+import Link from 'next/link';
 interface PokemonProps {
   id: number; 
   name: string; 
   type: string[]; 
   shiny: boolean; 
+  url: string;
 }
 
 
@@ -22,8 +24,8 @@ function capitalizeFirstLetter(str: string): string {
         <div>
             <Image src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.id}.png`} 
             alt={props.name}
-            width={96}
-            height={96} />
+            width={200}
+            height={200} />
         </div>
         <div>
             <h2 className='text-center text-2xl'>{capitalizeFirstLetter(props.name)}</h2>
@@ -31,7 +33,12 @@ function capitalizeFirstLetter(str: string): string {
                 <span>{props.type[0]}</span>
                 <span>{props.shiny && <Sparkles width={20}/>}</span>
             </div>
-            <a className='text-center'>To Wiki</a>
+            <Link href={props.url} target="_blank" className='text-center'>
+              <Button className='cursor-pointer'>
+                To Wiki
+              </Button>
+            </Link>
+            <a className='text-center'></a>
         </div>
     </div>
   )

@@ -37,6 +37,7 @@ export default function PokemonList() {
             name={pokemon.name}
             type={pokemon.type}
             shiny={pokemon.shiny}
+            url={pokemon.url}
           />
       ))
       ) : (

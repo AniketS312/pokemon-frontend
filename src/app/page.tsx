@@ -1,7 +1,7 @@
 import Form from 'next/form';
 import { ModeToggle } from "@/app/components/Toggle";
 import PokemonList from '@/app/components/PokemonList';
-
+import AlertError from './components/AlertError';
 import  { Button } from "@/app/components/ui/button";
 import {
   Dialog,
@@ -10,7 +10,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/app/components/ui/dialog"
-import { Checkbox } from "@/components/ui/checkbox"
+import { Checkbox } from "@/app/components/ui/checkbox";
 import { Plus } from "lucide-react";
 
 import addPokemon from "@/app/actions/addPokemon";
@@ -36,6 +36,7 @@ export default function Home() {
 
 function DialogBox() {
 
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -52,6 +53,7 @@ function DialogBox() {
         <div>
           <Form action={addPokemon} className="flex flex-col gap-4">
             <input type="text" name="name" placeholder="Name" required  className="p-2"/>
+            <AlertError />
             <div className="flex items-center space-x-2">
               <Checkbox id="shiny" name='shiny' />
               <label
