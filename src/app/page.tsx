@@ -17,7 +17,7 @@ import addPokemon from "@/app/actions/addPokemon";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center">
+    <main className="flex min-h-screen flex-col items-center mb-5">
       <div className="flex flex-col items-center justify-between p-10 text-2xl relative w-full">
         <h1>Pokemons to Collect</h1> 
         <div className="absolute left-10">

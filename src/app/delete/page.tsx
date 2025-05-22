@@ -1,10 +1,7 @@
 "use client"
  
-import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
-import { z } from "zod"
-import { Redirect } from "next"
-
+import { useRouter } from "next/navigation";
 import { Button } from "@/app/components/ui/button"
 import {
   Form,
@@ -16,51 +13,41 @@ import {
   FormMessage,
 } from "@/app/components/ui/form"
 import { Input } from "@/app/components/ui/input"
-import { redirect } from "next/dist/server/api-utils"
 
 
 
 export default function DeletePage() {
+  const router = useRouter();
 
-  const formSchema = z.object({
-  username: z.string().min(2, {
-    message: "Pokemon name must be at least 2 characters.",
-  }),
-})
+interface DeleteFormValues {
+  pokemon: string; // or number, depending on your form input
+}
 
- function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values.pokemon)
-    const deletePokemon = values.pokemon
-    try{
-    const response = fetch(`https://pokemon-backedn.onrender.com/removepokemon/${deletePokemon}`, {
+async function onSubmit(values: DeleteFormValues) {
+    const deletePokemon = values.pokemon; 
+    try {
+    const response = await fetch(`https://pokemon-backedn.onrender.com/removepokemon/${deletePokemon}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
         },
       });
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      if(response.ok) {
-        form.reset()
-        redirect("/")
+    const json = await response.json();
+    console.log(json, "Pokemon deleted successfully");
+    router.push("/"); 
 
-      }
-    } catch (error) {
-      console.error("Error deleting Pokemon:", error);
-    }
+  } catch (error) {
+    console.error("Error deleting Pokemon:", error);
   }
+}
  
-const form = useForm()
-
+  const form = useForm<DeleteFormValues>();
 
   return (
     <div className="m-20">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8" defaultValue={""}>
           <FormField
             control={form.control}
             name="pokemon"
